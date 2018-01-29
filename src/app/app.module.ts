@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import {MyOwnCustomMaterialModuleModule} from './my-own-custom-material-module.module';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
+import {HttpClient} from '@angular/common/http';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 
 @NgModule({
@@ -14,10 +16,11 @@ import { AppRoutingModule } from './/app-routing.module';
     LoginComponent
   ],
   imports: [
-    BrowserModule,MyOwnCustomMaterialModuleModule,
+    BrowserModule,MyOwnCustomMaterialModuleModule,FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
